@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="categoria_modulo_datos" model="ir.module.category">
+        <field name="name">Contabilidad</field>
+    </record>
+    <record id="datos_group_user" model="res.groups">
+        <field name="name">Administrador</field>
+        <field name="category_id" ref="categoria_modulo_datos"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+</odoo>

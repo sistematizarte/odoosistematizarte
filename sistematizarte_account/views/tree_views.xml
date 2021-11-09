@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+<!-- FORMULARIO DE VISTA TREE -->
+    <record id="account14_form_views" model="ir.ui.view">
+        <field name="name">account14.form.view</field>
+        <field name="model">datos</field>
+        <field name="arch" type='xml'>
+            <form string="datos">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="numero" />
+                            <field name="proyecto" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
