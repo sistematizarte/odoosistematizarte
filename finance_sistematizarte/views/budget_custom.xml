@@ -4,8 +4,8 @@
         <field name="name">budget_customs</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
-        <field name='arch' type='xml'>
-            <xpath expr="//field[@name='partner_id']" position="after">
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="before">
                    <field name="project" string='Proyecto' placeholder="Proyecto" required="True" />
             </xpath>            
         </field>
@@ -14,10 +14,10 @@
         <field name="name">budget_customs_tree</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
-        <field name='arch' type='xml'>
+        <field name="arch" type="xml">
+
             <xpath expr="//field[@name='partner_id']" position="before">
                    <field name="project" string="Proyecto"/>
-                   <field name="refence_field" string="Cuaota de Pago"/>
             </xpath>
         </field>
     </record>

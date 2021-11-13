@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+       <record id="payment_register" model="ir.ui.view">
+        <field name="name">PaymentRegister</field>
+        <field name="model">account.payment.register</field>
+        <field name="inherit_id" ref="account.view_account_payment_register_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='journal_id']" position="before">
+                   <field name="project" string='Proyecto' placeholder="Proyecto" required="True" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

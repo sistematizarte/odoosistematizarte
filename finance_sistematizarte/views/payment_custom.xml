@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="payment_search" model="ir.ui.view">
+        <field name="name">payment_customs</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="before">
+                   <field name="project" string='Proyecto' placeholder="Proyecto" required="True" />
+                   <field name="select_payment" string="Cuaota de Pago"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="payment_tree" model="ir.ui.view">
+        <field name="name">payment_customs_tree</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                   <field name="project" string='Proyecto' placeholder="Proyecto" required="True" />
+                   <field name="select_payment" string="Cuaota de Pago"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
