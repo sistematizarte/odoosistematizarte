@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+                    <!-- vista formulario de pago ingreso/egresos -->
     <record id="finance_search" model="ir.ui.view">
         <field name="name">finance_customs</field>
         <field name="model">account.move</field>
@@ -13,17 +14,7 @@
             </xpath>
         </field>
     </record>
-    <record id="finance_tree" model="ir.ui.view">
-        <field name="name">finance_customs_tree</field>
-        <field name="model">account.move</field>
-        <field name="inherit_id" ref="account.view_out_invoice_tree"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='partner_id']" position="before">
-                   <field name="project" string="Proyecto"/>
-                   <field name="select_payment" string="Cuaota de Pago"/>
-            </xpath>
-        </field>
-    </record>
+                            <!-- vista tree engresos -->
     <record id="finance_tree_egresos" model="ir.ui.view">
         <field name="name">finance_customs_tree_egresos</field>
         <field name="model">account.move</field>
@@ -36,5 +27,20 @@
                    <field name="select_payment" string="Cuaota de Pago"/>
             </xpath>
         </field>
-    </record> 
+    </record>
+                            <!-- vista tree ingresos -->
+    <record id="finance_tree" model="ir.ui.view">
+        <field name="name">finance_customs_tree_ingresos</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_out_invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                   <field name="project" string="Proyecto"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="before">
+                   <field name="project" string="Cuaota de Pago"/>
+                   <field name="total" string="Ganancia"/>
+            </xpath>
+        </field>
+    </record>
 </odoo>
