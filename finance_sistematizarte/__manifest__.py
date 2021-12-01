@@ -6,7 +6,7 @@
     "author": "",
     "website": "",
     'category': 'account',
-    'depends': ['base', 'account', 'sale'],
+    'depends': ['base', 'account', 'sale', 'hr_expense'],
     'data': [
         'views/finance_custom.xml',
         'views/budget_custom.xml',

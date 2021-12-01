@@ -1,17 +1,31 @@
+import psycopg2 as psycopg2
 from odoo import models, fields, api
+import psycopg2
+
 
 class datos(models.Model):
     _name = 'datos' #NOMBRE DE LA TABLA
     _description = 'datos de contabilidad'
 
-    numero = fields.Char(string='numero')
-    proyecto = fields.Char(string='proyecto')
-    pago = fields.Integer('pago')
-    cliente = fields.Char('cliente')
-    fecha = fields.Date('fecha')
-    impuesto = fields.Integer('impuesto')
-    estatus = fields.Boolean('estatus')
-    estatus_p = fields.Boolean('estatus_p') #estado de pago
+    def _datos(self):
+        for rec in self:
+            rec.dato = self.env['account.move'].search('account_payment', '=', 'amount')
+            rec.prueba = rec.dato
+            return rec.prueba
 
-#class Sale_Custom(models.Model):
-#    _inherit = "sale.order"
+    #def _get_default_name(self):
+    #    dato = self.env['account.move'].search('account_payment', in, amount)
+    #    self.prueba = dato
+    #    return self.prueba
+
+    prueba = fields.Char(
+        string='Name',
+        default=_datos,
+    )
+
+
+    project = fields.Many2one('project.project', string='Proyecto')
+    account = fields.Many2one('account.move', string='Proveedores')
+    total = fields.Float(string='total')
+
+

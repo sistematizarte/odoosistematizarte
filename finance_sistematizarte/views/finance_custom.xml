@@ -9,9 +9,9 @@
             <xpath expr="//field[@name='partner_id']" position="after">
                    <field name="project" string='Proyecto' placeholder="Proyecto" required="True" />
             </xpath>            
-            <xpath expr="//field[@name='project']" position="after">
+           <!-- <xpath expr="//field[@name='project']" position="after">
                    <field name="select_payment" />
-            </xpath>
+            </xpath>-->
         </field>
     </record>
                             <!-- vista tree engresos -->
@@ -23,9 +23,9 @@
             <xpath expr="//field[@name='partner_id']" position="before">
                    <field name="project" string="Proyecto"/>
             </xpath>            
-            <xpath expr="//field[@name='project']" position="before">
+            <!--<xpath expr="//field[@name='project']" position="before">
                    <field name="select_payment" string="Cuaota de Pago"/>
-            </xpath>
+            </xpath>-->
         </field>
     </record>
                             <!-- vista tree ingresos -->
@@ -39,7 +39,6 @@
             </xpath>
             <xpath expr="//field[@name='name']" position="before">
                    <field name="project" string="Cuaota de Pago"/>
-                   <field name="total" string="Ganancia"/>
             </xpath>
         </field>
     </record>

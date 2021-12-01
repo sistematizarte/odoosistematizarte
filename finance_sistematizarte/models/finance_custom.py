@@ -7,7 +7,7 @@ class FinanceOdoo(models.Model):
     select_payment = fields.Selection([("payment_budget", "Anticipo"), ("payment_first_share", "Primera Cuota"),
             ("payment_second_share", "Segunda Cuota"), ("paymen_total", "Pago Total"), ("payment_partial", "Pago Complementario"),
             ("paynment_monthy", "Pago Mensual"),], default="payment_budget", string="Cuota de Pago",)
-    total = fields.Float(compute='_total_ganado')
+    #total = fields.Float(compute='_total_ganado')
 
     def _total_ganado(self):
         # total_id = self.env['amount_total']
@@ -42,3 +42,8 @@ class AccountPayment(models.Model):
         default="payment_budget",
         string="Cuota de Pago",
     )
+class Expense(models.Model):
+    _inherit = "hr.expense"
+
+    project = fields.Many2one('project.project', string='Proyecto')
+

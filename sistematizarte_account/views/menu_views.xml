@@ -7,15 +7,16 @@
         <field name="view_mode">tree,form</field>
     </record>
     <menuitem id="urls_menu" name="Finanzas"/>
-
-    <!--<menuitem id="finace_egresos" name="Facturas de Egresos" parent="urls_menu" action="account.open_account_journal_dashboard_kanban" sequence="1"/> -->
-
+    <menuitem id="proyecto_menu" name="Proyectos" parent="urls_menu" action="project.open_view_project_all" sequence="1"/>
     <menuitem id="contabilidad_menu" name="Balance Financiero" parent="urls_menu" action="contabilidad_inicio" sequence="2"/>
-
-    <menuitem id="ingresos_id" name="Facturas de Ingresos" parent="urls_menu" action="account.action_move_out_invoice_type" sequence="3"/>
-
-    <menuitem id="egresos_id" name="Facturas de Egresos" parent="urls_menu" action="account.action_move_in_invoice_type" sequence="4"/>
-
-    <menuitem id="budget_id" name="Presupuesto" parent="urls_menu" action="sale.action_quotations_with_onboarding" sequence="5"/>
+    <menuitem id="finace_igresos" name="Facturas de Igresos" parent="urls_menu" sequence="3">
+        <menuitem id="factura_menu" name="Factura" action="account.action_move_out_invoice_type" sequence="1"/>
+        <menuitem id="pago_menu" name="Pago" action="account.action_account_payments" sequence="2"/>
+    </menuitem>
+    <menuitem id="finace_egresos" name="Facturas de Egresos" parent="urls_menu" sequence="4">
+        <menuitem id="factura_menu_egresos" name="Factura Egreso" action="account.action_move_in_invoice_type" sequence="1"/>
+        <menuitem id="pago_menu_igresos" name="Pago Egresos" action="account.action_account_payments_payable" sequence="2"/>
+    </menuitem>
+    <menuitem id="pagos_id" name="Gagos" parent="urls_menu" action="hr_expense.hr_expense_actions_my_unsubmitted" sequence="5"/>
 
 </odoo>
